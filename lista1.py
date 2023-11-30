@@ -24,7 +24,14 @@ def main():
     print("\nZadanie 4")
     a = float(input("Enter the first number (a): "))
     b = float(input("Enter the second number (b): "))
-    compare_numbers(a, b)
+
+    comperator = compare_numbers(a, b)
+    if comperator == 1:
+        f"The number {a} is greater than {b}."
+    elif comperator == -1:
+        f"The number {b} is greater than {a}."
+    else:
+        "The numbers are equal."
 
     print("\nZadanie 5")
     say_hello_to_adults()
@@ -69,26 +76,27 @@ def print_calculations(a, b):
     print(f"Sum (a + b): {a + b}")
     print(f"Difference (a - b): {a - b}")
     print(f"Product (a * b): {a * b}")
-    print(f"Quotient (a / b): {a / b if b != 0 else 'undefined'}")  # Check for division by zero
+    print(f"Quotient (a / b): {a / b}")
     print(f"Square root of the sum (sqrt(a + b)): {math.sqrt(a + b)}")
     print(f"Power (a^b): {a ** b}")
     print(f"Power (b^a): {b ** a}")
 
 
 def calculate_circle(radius):
-    return {"area": math.pi * radius ** 2, "circumference": 2 * math.pi * radius}
+    return {"area": math.pi * radius ** 2,
+            "circumference": 2 * math.pi * radius}
 
 
 def compare_numbers(a, b):
     result = (
-        "The numbers are equal."
+        0
         if a == b
-        else f"The number {a} is greater than {b}."
+        else 1
         if a > b
-        else f"The number {b} is greater than {a}."
+        else -1
     )
 
-    print(result)
+    return result
 
 
 def say_hello_to_adults():
@@ -137,6 +145,7 @@ def grade_student(score, output_format):
         return {"grade_num": grade_num}
     else:
         return {"grade_verbal": grade_verbal}
+
 
 if __name__ == '__main__':
     main()

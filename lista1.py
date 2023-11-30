@@ -12,7 +12,13 @@ def main():
     print_calculations(a, b)
 
     print("\nZadanie 3")
-    radius = float(input("Enter the radius of the circle: "))
+    while True:
+        radius = float(input("Enter the radius of the circle: "))
+        if radius > 0:
+            break
+        else:
+            print("Radius has to be positive")
+
     print(calculate_circle(radius))
 
     print("\nZadanie 4")
@@ -35,9 +41,22 @@ def main():
                                                                                      "triangle.")
 
     print("\nZadanie 8")
-    score = int(input("Enter the score "))
-    output_format = input("Enter the output format (numerical || verbal || both) ")
-    print(grade_student(score, output_format))
+    while True:
+        score = int(input("Enter the score (0-100): "))
+        if 0 <= score <= 100:
+            break
+        else:
+            print("Invalid score. Please enter a score between 0 and 100.")
+
+    while True:
+        output_format = input("Enter the output format (numerical || verbal || both): ")
+        if output_format in ['numerical', 'verbal', 'both']:
+            break
+        else:
+            print("Invalid output format. Please enter 'numerical', 'verbal', or 'both'.")
+
+    result_grade = grade_student(score, output_format)
+    print(result_grade)
 
 
 def say_hello():
@@ -57,12 +76,7 @@ def print_calculations(a, b):
 
 
 def calculate_circle(radius):
-    if radius < 0:
-        return {"error": "Invalid value, the radius cannot be negative."}
-    else:
-        area = math.pi * radius ** 2
-        circumference = 2 * math.pi * radius
-        return {"area": area, "circumference": circumference}
+    return {"area": math.pi * radius ** 2, "circumference": 2 * math.pi * radius}
 
 
 def compare_numbers(a, b):
@@ -95,9 +109,7 @@ def can_form_triangle(a, b, c):
 
 
 def grade_student(score, output_format):
-    if score < 0 or score > 100:
-        return {"error": "Invalid score. It must be between 0 and 100."}
-    elif score < 50:
+    if score < 50:
         grade_num = 2.0
         grade_verbal = "niedostateczny"
     elif score < 60:
@@ -125,7 +137,6 @@ def grade_student(score, output_format):
         return {"grade_num": grade_num}
     else:
         return {"grade_verbal": grade_verbal}
-
 
 if __name__ == '__main__':
     main()

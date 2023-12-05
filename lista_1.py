@@ -167,34 +167,36 @@ def can_form_triangle(a, b, c):
 
 
 def grade_student(score, output_format):
-    if score < 50:
-        grade_num = 2.0
-        grade_verbal = "niedostateczny"
-    elif score < 60:
-        grade_num = 3.0
-        grade_verbal = "downstate"
-    elif score < 70:
-        grade_num = 3.5
-        grade_verbal = "dostateczny plus"
-    elif score < 80:
-        grade_num = 4.0
-        grade_verbal = "dobry"
-    elif score < 90:
-        grade_num = 4.5
-        grade_verbal = "dobry plus"
-    elif score < 100:
-        grade_num = 5.0
-        grade_verbal = "bardzo dobry"
-    else:
-        grade_num = 5.5
-        grade_verbal = "celujący"
+    match score:
+        case _ if score < 50:
+            grade_num = 2.0
+            grade_verbal = "niedostateczny"
+        case _ if score < 60:
+            grade_num = 3.0
+            grade_verbal = "dostateczny"
+        case _ if score < 70:
+            grade_num = 3.5
+            grade_verbal = "dostateczny plus"
+        case _ if score < 80:
+            grade_num = 4.0
+            grade_verbal = "dobry"
+        case _ if score < 90:
+            grade_num = 4.5
+            grade_verbal = "dobry plus"
+        case _ if score < 100:
+            grade_num = 5.0
+            grade_verbal = "bardzo dobry"
+        case _:
+            grade_num = 5.5
+            grade_verbal = "celujący"
 
-    if output_format == 'both':
-        return {"grade_num": grade_num, "grade_verbal": grade_verbal}
-    elif output_format == 'numerical':
-        return {"grade_num": grade_num}
-    else:
-        return {"grade_verbal": grade_verbal}
+    match output_format:
+        case 'both':
+            return {"grade_num": grade_num, "grade_verbal": grade_verbal}
+        case 'numerical':
+            return {"grade_num": grade_num}
+        case _:
+            return {"grade_verbal": grade_verbal}
 
 
 if __name__ == '__main__':

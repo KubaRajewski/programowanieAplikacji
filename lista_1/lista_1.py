@@ -79,6 +79,7 @@ def main():
 
     print("Yes, the lengths can form a triangle." if can_form_triangle(a, b, c) else "No, the lengths cannot form a "
                                                                                      "triangle.")
+
     ########## ZADANIE 8 ##########
     print("\nZadanie 8")
     while True:
@@ -103,15 +104,16 @@ def main():
 
     print(grade_student(score, output_format))
 
+
 def say_hello():
     while True:
         try:
             name = input("Enter your name: ")
-            birthYear = int(input("Enter your year of birth: "))
+            birth_year = int(input("Enter your year of birth: "))
             break
         except ValueError:
             print("Type in a number")
-    age = datetime.now().year - birthYear
+    age = datetime.now().year - birth_year
     print(f"{name}, you are {age} years old.")
 
 

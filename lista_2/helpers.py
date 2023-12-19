@@ -1,6 +1,3 @@
-from itertools import combinations
-
-
 def get_numbers():
     numbers = []
     while True:
@@ -72,11 +69,6 @@ def guess_game(lower_bound, upper_bound, number):
 
         except ValueError:
             print("Enter a number")
-
-
-def print_combinations(n_books, choose):
-    for combination in combinations(range(1, n_books + 1), choose):
-        print(' '.join(map(str, combination)))
 
 
 class RangeException(Exception):

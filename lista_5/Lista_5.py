@@ -12,19 +12,19 @@ def main():
 
     ########### ZADANIE 2 ##########
     print("\nZadanie 2")
-    read_file_content(input("filename: "))
+    print(read_file_content("input.txt"))
 
-    # ########### ZADANIE 3 ##########
-    # print("\nZadanie 3")
-    # print(count_occurrences("lista_5/test.txt", "Kot"))
-    #
-    # ########### ZADANIE 4 ##########
-    # print("\nZadanie 4")
-    # print(combine_lists([1, 2, 3], [2, 3, 4, 5], [5, 6, 7]))
-    #
-    # ########### ZADANIE 5 ##########
-    # print("\nZadanie 5")
-    # print(count_unique_words('lista_5/test.txt', 'output.txt'))
+    ########### ZADANIE 3 ##########
+    print("\nZadanie 3")
+    print(count_occurrences("input.txt", "ala"))
+
+    ########### ZADANIE 4 ##########
+    print("\nZadanie 4")
+    print(combine_lists([1, 2, 3], [2, 3, 4, 5], [5, 6, 7]))
+
+    ########### ZADANIE 5 ##########
+    print("\nZadanie 5")
+    print(count_unique_words('input.txt', 'output.txt'))
 
 
 def read_file_content(filename):

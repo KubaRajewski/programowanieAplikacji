@@ -1,6 +1,7 @@
 def main():
     ########### ZADANIE 1 ##########
     print("\nZadanie 1")
+
     while True:
         n = input("How many numbers would you like to input? ")
         if n.isnumeric():
@@ -21,29 +22,34 @@ def main():
 
     ########## ZADANIE 3 ##########
     print("\nZadanie 3")
+
     print(f"Min: {min(numbers)}")
     print(f"Max: {max(numbers)}")
 
     ########### ZADANIE 4 ##########
     print("\nZadanie 4")
+
     wanted_sum = int(input("What sum are you looking for? "))
     for pair in find_pairs(numbers, wanted_sum):
         print(f"{pair[0]} + {pair[1]} = {pair[0] + pair[1]}")
 
     ########### ZADANIE 5 ##########
     print("\nZadanie 5")
+
     fields_of_study = {
         'Computer Science': 'Faculty of Computer Science and Management',
-        'Civil Engineering': 'Faculty of Civil Engineering',
+        'Engineering': 'Faculty Engineering',
         'Biotechnology': 'Faculty of Chemistry',
         'Electronics': 'Faculty of Electronics',
         'Mechanical Engineering': 'Faculty of Mechanical Engineering'
     }
-    fields_of_study.get('Computer Science', "You cannot study this field at the Wrocław University of Science and "
-                                            "Technology.")
+
+    print(fields_of_study.get('Computer Science', "You cannot study this field at the Wrocław University of Science and "
+                                            "Technology."))
 
     ########## ZADANIE 6 ##########
     print("\nZadanie 6")
+
     count_characters("Example sentence to test")
 
 

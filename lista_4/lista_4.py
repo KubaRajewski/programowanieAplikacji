@@ -24,12 +24,12 @@ def main():
 
     ########### ZADANIE 5 ##########
     print("\nZadanie 5")
-    wielomian_1 = [-2, 3, 0, 4]
-    wielomian_2 = [1, 5, 2]
+    w1 = [-2, 3, 0, 4]
+    w2 = [1, 5, 2]
 
-    print("addition: ", add_polynomials(wielomian_1, wielomian_2))
-    print("subtraction", subtract_polynomials(wielomian_1, wielomian_2))
-    print("multiplication", multiply_polynomials(wielomian_1, wielomian_2))
+    print("addition: ", add(w1, w2))
+    print("subtraction", subtract(w1, w2))
+    print("multiplication", multiply(w1, w2))
 
     ########### ZADANIE 6 ##########
     print("\nZadanie 6")
@@ -67,7 +67,7 @@ def factorial(x):
     return x * factorial(x - 1)
 
 
-def add_polynomials(p1, p2):
+def add(p1, p2):
     if len(p1) > len(p2):
         p2.extend([0] * (len(p1) - len(p2)))
     else:
@@ -75,7 +75,7 @@ def add_polynomials(p1, p2):
     return [a + b for a, b in zip(p1, p2)]
 
 
-def subtract_polynomials(p1, p2):
+def subtract(p1, p2):
     if len(p1) > len(p2):
         p2.extend([0] * (len(p1) - len(p2)))
     else:
@@ -83,7 +83,7 @@ def subtract_polynomials(p1, p2):
     return [a - b for a, b in zip(p1, p2)]
 
 
-def multiply_polynomials(p1, p2):
+def multiply(p1, p2):
     result = [0] * (len(p1) + len(p2) - 1)
     for i in range(len(p1)):
         for j in range(len(p2)):
